@@ -1,0 +1,158 @@
+.slider-gallery {
+	position: relative;
+	.slide {
+		display: none;
+		position: relative;
+		margin: 5rem 0 2.5rem;
+		.slide__img {
+			display: block;
+		}
+		.slide__desc {
+			width: 68.5%;
+			height: 6.4375rem;
+			padding: 1rem 0 3rem;
+			position: absolute;
+			left: 50%;
+			bottom: 10.5%;
+			transform: translateX(-50%);
+			background-color: rgba(255, 255, 255, 0.925);
+			text-align: center;
+			.desc {
+				font-size: 1.5rem;
+				line-height: 2;
+			}
+			@media @md {
+				width: 63.5%;
+				height: 5.4375rem;
+				bottom: 7.5%;
+				.desc {
+					font-size: 1.2rem;
+				}
+			}
+			@media @sm {
+				bottom: 2.5%;
+				.desc {
+					font-size: 0.9rem;
+				}
+			}
+			@media @xs {
+				height: 3.4375rem;
+				padding-top: 0.4rem;
+				.desc {
+					font-size: 0.6rem;
+					line-height: 1.2;
+				}
+			}
+		}
+	}
+	.slider-gallery__btn {
+		position: absolute;
+		top: 33%;
+		cursor: pointer;
+		width: auto;
+		border: none;
+		background-color: transparent;
+		padding: 1rem 1rem 1rem 3rem;
+		border-radius: 0 0.8rem 0.8rem 0;
+			i {
+				color: #fff;
+				font-size: 2rem;
+			}
+		&.prev {
+			left: 0;
+		}
+		&.next {
+			padding: 1rem 3rem 1rem 1rem;
+			right: 0;
+			border-radius: 0.8rem 0 0 0.8rem;
+		}
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		@media @md {
+			padding-left: 2rem;
+			i {
+				font-size: 1.8rem;
+			}
+			&.next {
+				padding-right: 2rem;
+			}
+		}
+		@media @sm {
+			top: 29%;
+			i {
+				font-size: 1.5rem;
+			}
+		}
+		@media @xs {
+			top: 20%;
+			padding-left: 1rem;
+			i {
+				font-size: 1.3rem;
+			}
+			&.next {
+				padding-right: 1rem;
+			}
+		}
+	}
+	.row-thumbs {
+		display: flex;
+		justify-content: space-between;
+		opacity: 0.8;
+		.column {
+			flex-grow: 1;
+			.slide__thumb {
+				position: relative;
+				display: block;
+				padding: 0 0.5rem;
+				&.active {
+					display: none;
+				}
+				&:hover {
+					opacity: 1;	
+				}
+				.thumb__desc {
+					position: absolute;
+					left: 10%;
+					top: 50%;
+					color: #fff;
+					.travel-btn {
+						text-transform: capitalize;
+						margin-bottom: 0.5rem;
+					}
+					.thumb__text {
+						width: 80%;
+					}
+					@media @md {
+						.travel-btn {
+							margin-bottom: 0.3rem;
+						}
+						.thumb__text {
+							width: 87%;
+							font-size: 0.7rem;
+						}
+					}
+					@media @sm {
+						.travel-btn {
+							margin-bottom: 0.1rem;
+						}
+						.thumb__text {
+							width: 95%;
+							font-size: 0.6rem;
+						}
+					}
+					@media @xs {
+						position: static;
+						.thumb__text {
+							height: 4rem;
+							color: #525252;
+						}
+					}
+				}
+			}
+			
+		}
+		
+	}
+	
+}

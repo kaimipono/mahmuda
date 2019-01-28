@@ -1,0 +1,43 @@
+- const arrayOfSlideImage = [['../images/img01.jpg', 'Image one', 'Voluptas assumenda sunt omnis modi ut ut'], ['../images/img02.jpg', 'Image two', 'Eos voluptatem aut doloremque'], ['../images/img03.jpg', 'Image three', 'Fugiat in cupiditate iusto dolor dolorem'],['../images/img04.jpg', 'Image four', 'Doloremque deleniti voluptatum dolorem']];
+
+doctype html
+html(lang='en')
+	include templates/head.pug
+	body
+		.wrapper-page
+
+			include templates/header.pug
+			.top-line
+			.wrapper-content
+				include templates/navigation.pug
+				.container
+					main.main-content
+						section.travel
+							.slider-gallery
+								- for (let i = 0; i < 4; i++)
+									.slide
+										img(src = arrayOfSlideImage[i][0], alt=arrayOfSlideImage[i][1], style='width:100%', class= 'slide__img')
+										.slide__desc
+											include templates/travel-button.pug
+											p.desc #{arrayOfSlideImage[i][2]}
+								button(class='slider-gallery__btn prev', onclick = 'plusSlides(-1)')
+									i.fas.fa-chevron-left
+								button(class='slider-gallery__btn next', onclick = 'plusSlides(1)')
+									i.fas.fa-chevron-right
+
+								.row-thumbs
+									- for (let i = 0; i < 4; i++)
+											.column
+												.slide__thumb(onclick = `currentSlide(${i+1})`)
+													img(src=arrayOfSlideImage[i][0], alt=arrayOfSlideImage[i][1], style='width:100%')
+													.thumb__desc
+														include templates/travel-button.pug
+														p.thumb__text #{arrayOfSlideImage[i][2]}
+
+						include templates/latest-post.pug
+
+						include templates/instagram-feed.pug
+
+			include templates/footer.pug
+
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')

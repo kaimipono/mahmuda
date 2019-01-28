@@ -1,0 +1,9 @@
+- const arrayOfItem = ['home', 'food', 'drink', 'life', 'recipes', 'travel', 'about', 'contact'];
+
+nav.navigation
+	ul.navigation__menu
+		- for (val of arrayOfItem)
+			li.nav__item
+				a.nav__link #{val}
+		button(class='hamburger__menu', onclick='expandMenu()')
+			i.fas.fa-bars

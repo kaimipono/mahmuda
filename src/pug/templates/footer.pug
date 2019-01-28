@@ -1,0 +1,27 @@
+- const arrayThumbnailImage = [['../../images/card01.jpg', 'card #1', 'Eos voluptatem aut doloremque'], ['../../images/card02.jpg', 'card #2', 'Fugiat in cupiditate iusto dolor dolorem'], ['../../images/card03.jpg', 'card #3', 'Ut adipisci ullam sit iste vel voluptatem']];
+
+footer.footer
+	.container
+		.footer__top
+			.footer__column
+				h2.column__title about us
+				p.column__text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+			.footer__column
+				h2.column__title never miss any update
+				.form
+					input(type='email', placeholder='enter your email address')
+					input(type='submit', value='')
+				h2.column__title follow us
+				include socials.pug
+			.footer__column
+				h2.column__title latests posts
+				- for (let i = 0; i < 3; i++)
+					.post-thumbnail
+						img(src=arrayThumbnailImage[i][0], alt = arrayThumbnailImage[i][1], class='post-thumbnail__img', width='73', height='62')
+						div(class='post-thumbnail__text')
+							p(class='post-thumbnail__desc') #{arrayThumbnailImage[i][2]}
+							div(class='post-thumbnail__date') 17 July, 2018
+		.footer__line
+		.footer__copy
+			p.copy__text Copyright 2018 Mahmuda | Site design by <a href="#" class='copy__graph'>Graphicslot</a>
+

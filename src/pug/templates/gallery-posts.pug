@@ -1,0 +1,75 @@
+- const arrayOfCardImage = [['../../images/card01.jpg', 'card #1', 'Similique fugit occaecati dolor ipsum ducimus'], ['../../images/card02.jpg', 'card #2', 'Quaerat temporibus sunt et quia sed id'], ['../../images/card03.jpg', 'card #3', 'Fugiat in cupiditate iusto dolor dolorem'], ['../../images/card04.jpg', 'card #4', 'Eos voluptatem aut doloremque'], ['../../images/card05.jpg', 'card #5', 'Temporibus quod architecto pariatur sint itaque temporibus'], ['../../images/card06.jpg', 'card #6', 'Ut adipisci ullam sit iste vel voluptatem'], ['../../images/card07.jpg', 'card #7', 'Molestiae dolor dignissimos cupiditate'], ['../../images/card08.jpg', 'card #8', 'Doloremque deleniti voluptatum dolorem'], ['../../images/card09.jpg', 'card #9', 'Fugiat in cupiditate iusto dolor dolorem']];
+
+.gallery-page
+	.page.page-0
+		.cards
+			- for (let j = 0; j < 9; j++)
+				.card
+					img(src = arrayOfCardImage[j][0], alt= arrayOfCardImage[j][1], style='width:100%', class= 'card__img')
+
+					include travel-button.pug
+					.card__posted
+						.posted__user
+							i.far.fa-user
+							|John Doe
+						.posted__date
+							i.far.fa-clock
+							|15 Sep, 2018
+					p.card__desc #{arrayOfCardImage[j][2]}
+
+	.page.page-1
+		.cards
+			- for (let j = 0; j < 9; j++)
+				.card
+					img(src = arrayOfCardImage[j][0], alt= arrayOfCardImage[j][1], style='width:100%', class= 'card__img')
+
+					include travel-button.pug
+					.card__posted
+						.posted__user
+							i.far.fa-user
+							|John Doe
+						.posted__date
+							i.far.fa-clock
+							|15 Sep, 2018
+					p.card__desc #{arrayOfCardImage[j][2]}
+
+	.page.page-2
+		.cards
+			- for (let j = 0; j < 9; j++)
+				.card
+					img(src = arrayOfCardImage[j][0], alt= arrayOfCardImage[j][1], style='width:100%', class= 'card__img')
+
+					include travel-button.pug
+					.card__posted
+						.posted__user
+							i.far.fa-user
+							|John Doe
+						.posted__date
+							i.far.fa-clock
+							|15 Sep, 2018
+					p.card__desc #{arrayOfCardImage[j][2]}
+
+	.page.page-3
+		.cards
+			- for (let j = 0; j < 9; j++)
+				.card
+					img(src = arrayOfCardImage[j][0], alt= arrayOfCardImage[j][1], style='width:100%', class= 'card__img')
+
+					include travel-button.pug
+					.card__posted
+						.posted__user
+							i.far.fa-user
+							|John Doe
+						.posted__date
+							i.far.fa-clock
+							|15 Sep, 2018
+					p.card__desc #{arrayOfCardImage[j][2]}
+
+	.pagination
+		.pagination__btns
+			button(class='pagination_btn prev', onclick='plusPages(-1)') previous
+			button(class='pagination_btn btn_numb', onclick='currentPage(1)') 1
+			button(class='pagination_btn btn_numb', onclick='currentPage(2)') 2
+			button(class='pagination_btn btn_numb', onclick='currentPage(3)') 3
+			button(class='pagination_btn btn_numb', onclick='currentPage(4)') 4
+			button(class='pagination_btn next', onclick='plusPages(1)') next

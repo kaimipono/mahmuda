@@ -1,0 +1,41 @@
+.socials {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 10.8rem;
+	height: 2.1875rem;
+	a {
+		display: block;
+		height: 100%;
+		.social {
+			width: 2.1875rem;
+			height: 100%;
+			border: 1px solid @socialIconColor;
+			border-radius: 50%;
+			position: relative;
+			i {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: @socialIconColor;
+				font-size: 1.2rem;
+			}
+		
+		}
+
+		&:hover, &:active {
+			transform: scale(1.2);
+			.social {
+				border-color: @hoverSocialIconColor;
+				i {
+					color: @hoverSocialIconColor;
+				}
+			}
+		}
+
+	}
+	@media @md {
+		width: 9rem;
+	}
+}

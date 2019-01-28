@@ -1,0 +1,64 @@
+.navigation {
+	width: 100%;
+	height: auto;
+	background-color: #fff;
+	.navigation__menu {
+		margin: 0 auto;
+		width: @containerWidth;
+		height: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		.nav__item {
+			padding: 1.6rem 0;
+			&:hover {
+				transform: scale(1.2);
+				.nav__link {
+					color: @hoverSocialIconColor;
+				}
+			}
+			.nav__link {
+				text-transform: uppercase;
+				font-family: @montserratRegular;
+				font-size: 0.8125rem;
+				color: #525252;
+				cursor: pointer;
+			}
+		}
+		.hamburger__menu {
+			display: none;
+			background-color: #fff;
+			border: none;
+			i {
+				padding: 1rem;
+				color: #525252;
+			}
+		}
+		@media @lg { width: @containerWidth * 1.15; }
+		@media @sm { 
+			width: @containerWidth * 1.38;
+			flex-direction: column;
+			.nav__item {
+				display: none;
+			}
+			&.expanded {
+				.nav__item {
+					display: flex;
+					padding: 0.6rem 0;
+					.nav__link {
+						font-size: 1.2rem;
+					}
+				}
+			}
+			.hamburger__menu {
+				display: flex;
+				order: -1;
+				margin-left: auto;
+				i {
+					font-size: 2rem;
+				}
+			}
+
+		}
+	}
+}

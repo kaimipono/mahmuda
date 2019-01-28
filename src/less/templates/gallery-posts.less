@@ -1,0 +1,59 @@
+.page {
+	display: none;
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 1rem;
+		align-items: stretch;
+		cursor: pointer;
+		@media @sm {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media @xs {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		.card {
+			max-width: 100%;
+			background-color: #fff;
+			padding-bottom: 1rem;
+			.card__posted {
+				width: 50%;
+				margin: 1rem auto;
+				display: flex;
+				justify-content: space-between;
+				font-size: 0.625rem;
+				i {
+					color: #A6A6A6;
+					padding-right: 0.3rem;
+				}
+			}
+			.card__desc {
+				width: 80%;
+				margin: 0 auto;
+			}
+			&:hover {
+				opacity: 0.7;
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+.pagination {
+	margin-top: 4.5625rem;
+	.pagination_btn {
+		padding: 0.5rem 1rem;
+		background-color: #fff;
+		border: 2px solid #DCDCDC;
+		text-transform: uppercase;
+		font-family: @montserratRegular;
+		font-size: 0.875rem;
+		color: #525252;
+		cursor: pointer;
+		&:hover {
+			background-color: @hoverSocialIconColor;
+			transform: scale(1.2);
+		}
+	}
+}
